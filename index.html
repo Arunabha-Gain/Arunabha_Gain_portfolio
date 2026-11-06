@@ -1,0 +1,428 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <!-- =========================================
+         BASIC PAGE SETTINGS
+    ========================================== -->
+
+    <meta charset="UTF-8">
+
+    <!-- Makes the website responsive on mobile -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Browser tab title -->
+    <title>Arunabha Gain | Portfolio</title>
+
+
+    <!-- =========================================
+         GOOGLE FONT
+    ========================================== -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+        rel="stylesheet"
+    >
+
+
+    <!-- =========================================
+         CSS FILE
+    ========================================== -->
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- =========================================
+         HEADER
+         Contains:
+         1. Logo / small photo
+         2. Theme button
+         3. Menu button
+    ========================================== -->
+
+    <header class="header">
+
+
+        <!-- =====================================
+             TOP LEFT LOGO
+        ====================================== -->
+
+        <!--
+            Change "images/logo-photo.jpg"
+            to your actual photo later.
+
+            Example:
+
+            images/my-photo.jpg
+        -->
+
+        <a href="index.html" class="logo">
+
+            <img
+                src="images/logo.jpeg"
+                alt="Arunabha Gain"
+            >
+
+        </a>
+
+
+        <!-- =====================================
+             RIGHT SIDE HEADER BUTTONS
+        ====================================== -->
+
+        <div class="header-buttons">
+
+
+            <!-- =================================
+                 DARK / LIGHT THEME BUTTON
+            ================================== -->
+
+            <button
+                class="theme-button"
+                id="themeButton"
+                aria-label="Change theme"
+            >
+
+                <!-- JavaScript changes this icon -->
+                <span id="themeIcon">☼</span>
+
+            </button>
+
+
+            <!-- =================================
+                 HAMBURGER MENU BUTTON
+            ================================== -->
+
+            <button
+                class="menu-button"
+                id="menuButton"
+                aria-label="Open navigation menu"
+            >
+
+                <!-- Three lines of hamburger menu -->
+
+                <span></span>
+                <span></span>
+                <span></span>
+
+            </button>
+
+        </div>
+
+    </header>
+
+
+
+    <!-- =========================================
+         RIGHT SIDE NAVIGATION MENU
+         
+         This menu is hidden initially.
+         JavaScript opens it when the
+         hamburger button is clicked.
+    ========================================== -->
+
+    <nav class="side-menu" id="sideMenu">
+
+
+        <!-- Small heading -->
+
+        <p class="menu-heading">
+            NAVIGATION
+        </p>
+
+
+        <!--
+            IMPORTANT:
+
+            These links point to SEPARATE HTML pages.
+
+            Example:
+            About → about.html
+            Skills → skills.html
+        -->
+
+
+        <a href="index.html" class="menu-link active">
+            <span>01</span>
+            Home
+        </a>
+
+
+        <a href="about.html" class="menu-link">
+            <span>02</span>
+            About
+        </a>
+
+
+        <a href="skills.html" class="menu-link">
+            <span>03</span>
+            Skills
+        </a>
+
+
+        <a href="projects.html" class="menu-link">
+            <span>04</span>
+            Projects
+        </a>
+
+
+        <a href="education.html" class="menu-link">
+            <span>05</span>
+            Education
+        </a>
+
+
+        <a href="certificates.html" class="menu-link">
+            <span>06</span>
+            Certificates
+        </a>
+
+
+        <a href="notes.html" class="menu-link">
+            <span>07</span>
+            Notes
+        </a>
+
+
+        <a href="contact.html" class="menu-link">
+            <span>08</span>
+            Contact
+        </a>
+
+    </nav>
+
+
+
+    <!-- =========================================
+         DARK OVERLAY
+         
+         Appears behind the side menu.
+         Clicking it closes the menu.
+    ========================================== -->
+
+    <div
+        class="menu-overlay"
+        id="menuOverlay"
+    ></div>
+
+
+
+    <!-- =========================================
+         MAIN HOME PAGE
+         
+         IMPORTANT:
+         Only Home page content is inside
+         this file.
+    ========================================== -->
+
+    <main>
+        <!-- =========================================
+     HOME / HERO SECTION
+     
+     LEFT  → Profile Photo
+     RIGHT → Introduction
+========================================== -->
+
+<section class="home" id="home">
+
+
+    <!-- =====================================
+         LEFT SIDE : PROFILE PHOTO
+    ====================================== -->
+
+    <div
+        class="profile-container"
+        id="profileContainer"
+    >
+
+        <!--
+            Replace this image later.
+
+            Example:
+
+            src="images/profile.jpg"
+        -->
+
+        <div class="profile-frame">
+
+            <img
+                src="images/my_photo.jpg"
+                alt="Arunabha Gain"
+                class="profile-image"
+            >
+
+        </div>
+
+
+        <!-- Decorative circles -->
+
+        <div class="decorative-circle circle-one"></div>
+
+        <div class="decorative-circle circle-two"></div>
+
+        <div class="decorative-circle circle-three"></div>
+
+
+        <!-- Small text around photo -->
+
+        <div class="photo-label">
+
+            <span>CREATIVE</span>
+
+            <span>•</span>
+
+            <span>CURIOUS</span>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- =====================================
+         RIGHT SIDE : INTRODUCTION
+    ====================================== -->
+
+    <div class="home-content">
+
+
+        <!-- Small heading -->
+
+        <p class="small-heading">
+
+            HELLO, I'M
+
+        </p>
+
+
+        <!-- Main name -->
+
+        <h1>
+
+            Arunabha
+
+            <span>Gain.</span>
+
+        </h1>
+
+
+        <!-- Professional title -->
+
+        <h2>
+
+            BCA Student &
+
+            <span
+                id="typingText"
+                class="typing-text"
+            ></span>
+
+        </h2>
+
+
+        <!-- Introduction -->
+
+        <p class="introduction">
+
+            I am a Bachelor of Computer Applications
+            student with an interest in
+            <strong>Data Analytics</strong>,
+            <strong>Cloud Computing</strong> and
+            modern technology.
+
+            I enjoy learning practical skills,
+            exploring new technologies and building
+            projects that help me understand how
+            technology can solve real-world problems.
+            <br><br>
+
+        </p>
+
+
+        <!-- =================================
+             RESUME BUTTONS
+        ================================== -->
+
+        <div class="resume-buttons">
+
+
+            <!-- Resume Preview -->
+
+            <a
+                href="#"
+                class="resume-button primary-button"
+                id="previewResume"
+            >
+
+                Preview Resume
+
+                <span>↗</span>
+
+            </a>
+
+
+            <!-- Resume Download -->
+
+            <a
+                href="#"
+                class="resume-button secondary-button"
+                id="downloadResume"
+            >
+
+                Download Resume
+
+                <span>↓</span>
+
+            </a>
+
+        </div>
+
+
+        <!-- =================================
+             SOCIAL LINKS
+        ================================== -->
+
+        <div class="social-links">
+
+            <a href="#" target="_blank">
+                LinkedIn
+            </a>
+
+            <a href="#" target="_blank">
+                GitHub
+            </a>
+
+            <a href="#">
+                Email
+            </a>
+
+        </div>
+
+
+    </div>
+
+</section>
+    </main>
+
+
+
+    <!-- =========================================
+         JAVASCRIPT FILE
+    ========================================== -->
+
+    <script src="script.js"></script>
+
+
+</body>
+
+</html>

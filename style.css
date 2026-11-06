@@ -1,0 +1,2346 @@
+/* =====================================================
+   PORTFOLIO WEBSITE - MAIN CSS
+
+   This file controls:
+   - Colors
+   - Layout
+   - Buttons
+   - Profile photo
+   - Navigation menu
+   - Dark/light theme
+   - Responsive design
+
+   You can customize most of the website
+   from this file.
+===================================================== */
+
+
+
+/* =====================================================
+   1. COLOR VARIABLES
+===================================================== */
+
+/*
+    DARK THEME
+
+    Primary:
+    Black
+
+    Accent:
+    #34F795
+*/
+
+:root {
+
+    --background: #050505;
+
+    --background-secondary: #0d0d0d;
+
+    --card: #111111;
+
+    --text: #ffffff;
+
+    --text-secondary: #a8a8a8;
+
+    --accent: #34F795;
+
+    --border: rgba(255, 255, 255, 0.12);
+
+    --menu-background: #0b0b0b;
+
+    --transition: 0.35s ease;
+
+}
+
+
+
+/* =====================================================
+   2. LIGHT THEME
+
+   When JavaScript adds "light-theme"
+   to body, these colors will be used.
+===================================================== */
+
+body.light-theme {
+
+    --background: #ffffff;
+
+    --background-secondary: #f5f5f5;
+
+    --card: #eeeeee;
+
+    --text: #111111;
+
+    --text-secondary: #555555;
+
+    --accent: #F7347B;
+
+    --border: rgba(0, 0, 0, 0.12);
+
+    --menu-background: #ffffff;
+
+}
+
+
+
+/* =====================================================
+   3. BASIC RESET
+===================================================== */
+
+* {
+
+    margin: 0;
+
+    padding: 0;
+
+    box-sizing: border-box;
+
+}
+
+
+
+/* Smooth scrolling */
+
+html {
+
+    scroll-behavior: smooth;
+
+}
+
+
+
+/* Body */
+
+body {
+
+    font-family: "Inter", sans-serif;
+
+    background: var(--background);
+
+    color: var(--text);
+
+    min-height: 100vh;
+
+    overflow-x: hidden;
+
+    transition:
+        background 0.4s ease,
+        color 0.4s ease;
+
+}
+
+
+
+/* Remove default link styling */
+
+a {
+
+    color: inherit;
+
+    text-decoration: none;
+
+}
+
+
+
+/* Buttons should use the same font */
+
+button {
+
+    font-family: inherit;
+
+}
+
+
+
+/* =====================================================
+   4. HEADER
+===================================================== */
+
+.header {
+
+    position: fixed;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 90px;
+
+    padding: 0 6%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    z-index: 1000;
+
+}
+
+
+
+/* =====================================================
+   5. TOP LEFT LOGO PHOTO
+===================================================== */
+
+.logo {
+
+    width: 50px;
+
+    height: 50px;
+
+    border-radius: 50%;
+
+    overflow: hidden;
+
+    border: 2px solid var(--accent);
+
+    display: block;
+
+    transition: var(--transition);
+
+}
+
+
+
+/* Logo image */
+
+.logo img {
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+
+}
+
+
+
+/* Logo hover effect */
+
+.logo:hover {
+
+    transform: scale(1.1);
+
+    box-shadow:
+        0 0 25px rgba(52, 247, 149, 0.25);
+
+}
+
+
+
+/* =====================================================
+   6. HEADER BUTTONS
+===================================================== */
+
+.header-buttons {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+}
+
+
+
+/* =====================================================
+   7. THEME BUTTON
+===================================================== */
+
+.theme-button {
+
+    width: 48px;
+
+    height: 48px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    color: var(--text);
+
+    cursor: pointer;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    font-size: 22px;
+
+    transition: var(--transition);
+
+}
+
+
+
+/* Hover */
+
+.theme-button:hover {
+
+    border-color: var(--accent);
+
+    color: var(--accent);
+
+    transform: rotate(20deg);
+
+}
+
+
+
+/* =====================================================
+   8. HAMBURGER MENU BUTTON
+===================================================== */
+
+.menu-button {
+
+    width: 52px;
+
+    height: 52px;
+
+    border-radius: 50%;
+
+    border: 1px solid var(--border);
+
+    background: var(--card);
+
+    cursor: pointer;
+
+    display: flex;
+
+    flex-direction: column;
+
+    justify-content: center;
+
+    align-items: center;
+
+    gap: 5px;
+
+    transition: var(--transition);
+
+    position: relative;
+
+    z-index: 1200;
+
+}
+
+
+
+/* Hamburger lines */
+
+.menu-button span {
+
+    width: 21px;
+
+    height: 2px;
+
+    background: var(--text);
+
+    transition: var(--transition);
+
+}
+
+
+
+/* Hover */
+
+.menu-button:hover {
+
+    border-color: var(--accent);
+
+}
+
+
+
+/* =====================================================
+   9. HAMBURGER ANIMATION
+
+   When menu becomes active,
+   the three lines become an X.
+===================================================== */
+
+.menu-button.active span:nth-child(1) {
+
+    transform:
+        translateY(7px)
+        rotate(45deg);
+
+}
+
+
+.menu-button.active span:nth-child(2) {
+
+    opacity: 0;
+
+}
+
+
+.menu-button.active span:nth-child(3) {
+
+    transform:
+        translateY(-7px)
+        rotate(-45deg);
+
+}
+
+
+
+/* =====================================================
+   10. RIGHT SIDE MENU
+===================================================== */
+
+.side-menu {
+
+    position: fixed;
+
+    top: 0;
+
+    right: 0;
+
+    width: min(400px, 85vw);
+
+    height: 100vh;
+
+    background: var(--menu-background);
+
+    border-left: 1px solid var(--border);
+
+    z-index: 1100;
+
+    padding:
+        130px 50px
+        50px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 18px;
+
+    /*
+        Menu starts outside the screen.
+    */
+
+    transform: translateX(100%);
+
+    transition:
+        transform 0.45s cubic-bezier(
+            0.77,
+            0,
+            0.175,
+            1
+        );
+
+}
+
+
+
+/* Menu open */
+
+.side-menu.active {
+
+    transform: translateX(0);
+
+}
+
+
+
+/* =====================================================
+   11. MENU HEADING
+===================================================== */
+
+.menu-heading {
+
+    color: var(--accent);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+/* =====================================================
+   12. MENU LINKS
+===================================================== */
+
+.menu-link {
+
+    font-size: 28px;
+
+    font-weight: 700;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 20px;
+
+    transition: var(--transition);
+
+}
+
+
+
+/* Number */
+
+.menu-link span {
+
+    font-size: 11px;
+
+    color: var(--text-secondary);
+
+    letter-spacing: 2px;
+
+}
+
+
+
+/* Hover */
+
+.menu-link:hover {
+
+    color: var(--accent);
+
+    transform: translateX(8px);
+
+}
+
+
+
+/* Active page */
+
+.menu-link.active {
+
+    color: var(--accent);
+
+}
+
+
+
+/* =====================================================
+   13. MENU OVERLAY
+===================================================== */
+
+.menu-overlay {
+
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.45);
+
+    backdrop-filter: blur(4px);
+
+    z-index: 1050;
+
+    opacity: 0;
+
+    visibility: hidden;
+
+    transition: var(--transition);
+
+}
+
+
+
+/* Overlay visible */
+
+.menu-overlay.active {
+
+    opacity: 1;
+
+    visibility: visible;
+
+}
+
+
+
+/* =====================================================
+   14. HOME SECTION
+===================================================== */
+
+.home {
+
+    min-height: 100vh;
+
+    width: 100%;
+
+    padding:
+        120px 8%
+        70px;
+
+    display: grid;
+
+    /*
+        First column:
+        Profile photo
+
+        Second column:
+        Introduction
+    */
+
+    grid-template-columns:
+        0.9fr
+        1.1fr;
+
+    align-items: center;
+
+    gap: 90px;
+
+    position: relative;
+
+}
+
+
+
+/* =====================================================
+   15. BACKGROUND EFFECT
+===================================================== */
+
+.home::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+
+    height: 500px;
+
+    right: 5%;
+
+    top: 20%;
+
+    background: var(--accent);
+
+    filter: blur(200px);
+
+    opacity: 0.08;
+
+    pointer-events: none;
+
+}
+
+
+
+/* =====================================================
+   16. HOME CONTENT
+===================================================== */
+
+.home-content {
+
+    max-width: 720px;
+
+    position: relative;
+
+    z-index: 2;
+
+}
+
+
+
+/* Small title */
+
+.small-heading {
+
+    color: var(--accent);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+/* =====================================================
+   17. MAIN NAME
+===================================================== */
+
+.home-content h1 {
+
+    font-size:
+        clamp(
+            60px,
+            8vw,
+            110px
+        );
+
+    line-height: 0.9;
+
+    letter-spacing: -6px;
+
+    font-weight: 800;
+
+    margin-bottom: 30px;
+
+}
+
+
+
+/* Accent part of name */
+
+.home-content h1 span {
+
+    color: var(--accent);
+
+}
+
+
+
+/* =====================================================
+   18. JOB / TITLE
+===================================================== */
+
+.home-content h2 {
+
+    font-size:
+        clamp(
+            20px,
+            3vw,
+            34px
+        );
+
+    font-weight: 500;
+
+    margin-bottom: 28px;
+
+}
+
+
+
+/* Typing text */
+
+.typing-text {
+
+    color: var(--accent);
+
+}
+
+
+
+/* Typing cursor */
+
+.typing-text::after {
+
+    content: "|";
+
+    margin-left: 4px;
+
+    animation: blink 0.8s infinite;
+
+}
+
+
+
+/* Cursor animation */
+
+@keyframes blink {
+
+    50% {
+
+        opacity: 0;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   19. INTRODUCTION
+===================================================== */
+
+.home-content {
+
+    max-width: 720px;
+
+    position: relative;
+
+    z-index: 2;
+
+    /*
+        Push content slightly
+        toward the right.
+    */
+
+    margin-left: auto;
+
+}
+
+
+
+/* Strong text */
+
+.introduction strong {
+
+    color: var(--text);
+
+}
+
+
+
+/* =====================================================
+   20. RESUME BUTTONS
+===================================================== */
+
+.resume-buttons {
+
+    display: flex;
+
+    gap: 15px;
+
+    flex-wrap: wrap;
+
+}
+
+
+
+/* Common button */
+
+.resume-button {
+
+    padding:
+        16px 24px;
+
+    border-radius: 50px;
+
+    display: inline-flex;
+
+    align-items: center;
+
+    gap: 12px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: var(--transition);
+
+}
+
+
+
+/* Primary resume button */
+
+.primary-button {
+
+    background: var(--accent);
+
+    color: #000000;
+
+}
+
+
+
+/* Primary hover */
+
+.primary-button:hover {
+
+    transform: translateY(-4px);
+
+    box-shadow:
+        0 15px 35px
+        rgba(52, 247, 149, 0.2);
+
+}
+
+
+
+/* Secondary button */
+
+.secondary-button {
+
+    border: 1px solid var(--border);
+
+    color: var(--text);
+
+}
+
+
+
+/* Secondary hover */
+
+.secondary-button:hover {
+
+    border-color: var(--accent);
+
+    color: var(--accent);
+
+    transform: translateY(-4px);
+
+}
+
+
+
+/* =====================================================
+   21. SOCIAL LINKS
+===================================================== */
+
+.social-links {
+
+    display: flex;
+
+    gap: 28px;
+
+    margin-top: 35px;
+
+}
+
+
+
+/* Social link */
+
+.social-links a {
+
+    color: var(--text-secondary);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+    transition: var(--transition);
+
+}
+
+
+
+/* Social hover */
+
+.social-links a:hover {
+
+    color: var(--accent);
+
+}
+
+
+
+/* =====================================================
+   22. PROFILE PHOTO CONTAINER
+===================================================== */
+
+.profile-container {
+
+    position: relative;
+
+    width:
+        min(
+            450px,
+            38vw
+        );
+
+    aspect-ratio: 1;
+
+    /*
+        Keeps the photo on the
+        left side of the Home page.
+    */
+
+    margin-right: auto;
+
+    transition:
+        transform 0.6s ease;
+
+}
+
+
+
+/* =====================================================
+   23. PROFILE PHOTO FRAME
+===================================================== */
+
+.profile-frame {
+
+    width: 100%;
+
+    height: 100%;
+
+    padding: 5px;
+
+    border-radius: 50%;
+
+    /*
+        Static gradient border.
+        It does NOT rotate.
+    */
+
+    background:
+        linear-gradient(
+            135deg,
+            var(--accent),
+            transparent 65%
+        );
+
+}
+
+
+
+/* =====================================================
+   24. PROFILE IMAGE
+===================================================== */
+
+.profile-image {
+
+    width: 100%;
+
+    height: 100%;
+
+    display: block;
+
+    object-fit: cover;
+
+    border-radius: 50%;
+
+    border:
+        8px solid
+        var(--background);
+
+}
+
+
+
+/* =====================================================
+   25. PROFILE DECORATIVE CIRCLES
+===================================================== */
+
+.decorative-circle {
+
+    position: absolute;
+
+    border-radius: 50%;
+
+}
+
+
+
+/* Green circle */
+
+.circle-one {
+
+    width: 28px;
+
+    height: 28px;
+
+    background: var(--accent);
+
+    right: 5%;
+
+    top: 5%;
+
+}
+
+
+
+/* Small circle */
+
+.circle-two {
+
+    width: 16px;
+
+    height: 16px;
+
+    background: var(--accent);
+
+    left: 3%;
+
+    bottom: 15%;
+
+}
+
+
+
+/* Another decorative circle */
+
+.circle-three {
+
+    width: 20px;
+
+    height: 20px;
+
+    background: var(--text);
+
+    right: 15%;
+
+    bottom: 3%;
+
+}
+
+
+
+/* =====================================================
+   26. PHOTO LABEL
+===================================================== */
+
+.photo-label {
+
+    position: absolute;
+
+    right: -30px;
+
+    top: 50%;
+
+    transform:
+        translateY(-50%)
+        rotate(90deg);
+
+    display: flex;
+
+    gap: 10px;
+
+    font-size: 9px;
+
+    letter-spacing: 3px;
+
+    color: var(--text-secondary);
+
+}
+
+
+
+/* =====================================================
+   27. PROFILE SCROLL EFFECT
+===================================================== */
+
+/*
+    When JavaScript adds "photo-small",
+    the photo becomes slightly smaller.
+
+    It remains on the RIGHT side.
+
+    It does NOT become a tiny floating
+    photo on the left.
+*/
+
+.profile-container.photo-small {
+
+    transform: scale(0.82);
+
+}
+
+
+/* =====================================================
+   28. RESPONSIVE DESIGN
+===================================================== */
+
+/* Tablet */
+
+@media (max-width: 900px) {
+
+    .home {
+
+        /*
+            On smaller screens,
+            use one column.
+        */
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        text-align: center;
+
+        padding-top: 130px;
+
+    }
+
+
+    /* Center the photo */
+
+    .profile-container {
+
+        width:
+            min(
+                330px,
+                65vw
+            );
+
+        margin: auto;
+
+    }
+
+
+    /* Center introduction */
+
+    .home-content {
+
+        margin: auto;
+
+    }
+
+
+    .introduction {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    /* Center buttons */
+
+    .resume-buttons {
+
+        justify-content: center;
+
+    }
+
+
+    /* Center social links */
+
+    .social-links {
+
+        justify-content: center;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 900px) {
+
+    .home {
+
+        /*
+            On smaller screens,
+            use one column.
+        */
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+        text-align: center;
+
+        padding-top: 130px;
+
+    }
+
+
+    /* Center the photo */
+
+    .profile-container {
+
+        width:
+            min(
+                330px,
+                65vw
+            );
+
+        margin: auto;
+
+    }
+
+
+    /* Center introduction */
+
+    .home-content {
+
+        margin: auto;
+
+    }
+
+
+    .introduction {
+
+        margin-left: auto;
+
+        margin-right: auto;
+
+    }
+
+
+    /* Center buttons */
+
+    .resume-buttons {
+
+        justify-content: center;
+
+    }
+
+
+    /* Center social links */
+
+    .social-links {
+
+        justify-content: center;
+
+    }
+
+}
+/* =====================================================
+   INNER PAGES
+   Used by:
+   About
+   Skills
+   Projects
+   Education
+   Certificates
+   Notes
+   Contact
+===================================================== */
+
+
+/* Main container for inner pages */
+
+.inner-page {
+
+    min-height: 100vh;
+
+    padding:
+        150px 8%
+        100px;
+
+    max-width: 1400px;
+
+    margin: auto;
+
+}
+
+
+
+/* =====================================================
+   PAGE HEADING
+===================================================== */
+
+.page-heading {
+
+    margin-bottom: 80px;
+
+    max-width: 850px;
+
+}
+
+
+
+.page-heading h1 {
+
+    font-size:
+        clamp(
+            55px,
+            8vw,
+            100px
+        );
+
+    line-height: 0.95;
+
+    letter-spacing: -5px;
+
+    margin-bottom: 25px;
+
+}
+
+
+
+.page-heading h1 span {
+
+    color: var(--accent);
+
+}
+
+
+
+.page-heading > p:last-child {
+
+    color: var(--text-secondary);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    max-width: 650px;
+
+}
+
+
+
+/* =====================================================
+   ABOUT CONTENT
+===================================================== */
+
+.content-section {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+
+.content-card {
+
+    padding: 35px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    transition: var(--transition);
+
+}
+
+
+
+.content-card:last-child {
+
+    grid-column: span 2;
+
+}
+
+
+
+.content-card:hover {
+
+    border-color: var(--accent);
+
+    transform: translateY(-5px);
+
+}
+
+
+
+.content-card h2 {
+
+    font-size: 25px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.content-card p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.8;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.content-card ul {
+
+    list-style: none;
+
+}
+
+
+
+.content-card li {
+
+    color: var(--text-secondary);
+
+    padding: 10px 0;
+
+    border-bottom: 1px solid var(--border);
+
+}
+
+
+
+.content-card li::before {
+
+    content: "→";
+
+    color: var(--accent);
+
+    margin-right: 12px;
+
+}
+
+
+
+/* =====================================================
+   SKILLS
+===================================================== */
+
+.skills-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+
+.skill-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    min-height: 260px;
+
+    transition: var(--transition);
+
+}
+
+
+
+.skill-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: var(--accent);
+
+}
+
+
+
+.skill-number {
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+}
+
+
+
+.skill-card h2 {
+
+    margin:
+        35px 0 15px;
+
+    font-size: 25px;
+
+}
+
+
+
+.skill-card p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+}
+
+
+
+.skill-tags,
+.project-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 25px;
+
+}
+
+
+
+.skill-tags span,
+.project-tags span {
+
+    border: 1px solid var(--border);
+
+    padding: 7px 12px;
+
+    border-radius: 50px;
+
+    font-size: 11px;
+
+    color: var(--text-secondary);
+
+}
+
+
+
+/* =====================================================
+   PROJECTS
+===================================================== */
+
+.project-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+
+.project-card {
+
+    position: relative;
+
+    padding: 40px;
+
+    min-height: 350px;
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    transition: var(--transition);
+
+}
+
+
+
+.project-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: var(--accent);
+
+}
+
+
+
+.project-number {
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+}
+
+
+
+.project-card h2 {
+
+    font-size: 30px;
+
+    margin:
+        30px 0 18px;
+
+}
+
+
+
+.project-card p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+}
+
+
+
+.project-links {
+
+    display: flex;
+
+    gap: 25px;
+
+    margin-top: 30px;
+
+}
+
+
+
+.project-links a {
+
+    color: var(--accent);
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+
+/* =====================================================
+   EDUCATION TIMELINE
+===================================================== */
+
+.timeline {
+
+    position: relative;
+
+    max-width: 1000px;
+
+}
+
+
+
+.timeline::before {
+
+    content: "";
+
+    position: absolute;
+
+    left: 145px;
+
+    top: 0;
+
+    bottom: 0;
+
+    width: 1px;
+
+    background: var(--border);
+
+}
+
+
+
+.timeline-item {
+
+    display: grid;
+
+    grid-template-columns:
+        170px 1fr;
+
+    gap: 40px;
+
+    margin-bottom: 70px;
+
+}
+
+
+
+.timeline-year {
+
+    color: var(--accent);
+
+    font-size: 13px;
+
+    font-weight: 700;
+
+    padding-top: 5px;
+
+}
+
+
+
+.timeline-content {
+
+    position: relative;
+
+    padding-left: 30px;
+
+}
+
+
+
+.timeline-content::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 10px;
+
+    height: 10px;
+
+    border-radius: 50%;
+
+    background: var(--accent);
+
+    left: -45px;
+
+    top: 7px;
+
+}
+
+
+
+.timeline-content h2 {
+
+    font-size: 28px;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.timeline-content h3 {
+
+    color: var(--accent);
+
+    font-size: 16px;
+
+    margin-bottom: 20px;
+
+}
+
+
+
+.timeline-content p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.8;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+/* =====================================================
+   CERTIFICATES
+===================================================== */
+
+.certificate-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+
+}
+
+
+
+.certificate-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 35px;
+
+    transition: var(--transition);
+
+}
+
+
+
+.certificate-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: var(--accent);
+
+}
+
+
+
+.certificate-card > span {
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+}
+
+
+
+.certificate-card h2 {
+
+    margin:
+        30px 0 15px;
+
+    font-size: 27px;
+
+}
+
+
+
+.certificate-card p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+}
+
+
+
+.certificate-card small {
+
+    display: block;
+
+    margin-top: 20px;
+
+    color: var(--text-secondary);
+
+}
+
+
+
+.certificate-card a {
+
+    display: inline-block;
+
+    margin-top: 25px;
+
+    color: var(--accent);
+
+    font-weight: 600;
+
+    font-size: 13px;
+
+}
+
+
+
+/* =====================================================
+   NOTES
+===================================================== */
+
+.notes-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 20px;
+
+}
+
+
+
+.note-card {
+
+    background: var(--card);
+
+    border: 1px solid var(--border);
+
+    border-radius: 20px;
+
+    padding: 30px;
+
+    transition: var(--transition);
+
+}
+
+
+
+.note-card:hover {
+
+    transform: translateY(-7px);
+
+    border-color: var(--accent);
+
+}
+
+
+
+.note-card > span {
+
+    color: var(--accent);
+
+    font-size: 12px;
+
+    letter-spacing: 3px;
+
+}
+
+
+
+.note-card h2 {
+
+    font-size: 23px;
+
+    margin:
+        30px 0 15px;
+
+}
+
+
+
+.note-card p {
+
+    color: var(--text-secondary);
+
+    line-height: 1.7;
+
+}
+
+
+
+.note-card a {
+
+    display: inline-block;
+
+    color: var(--accent);
+
+    margin-top: 25px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+
+/* =====================================================
+   CONTACT
+===================================================== */
+
+.contact-container {
+
+    display: grid;
+
+    grid-template-columns:
+        0.8fr 1.2fr;
+
+    gap: 80px;
+
+}
+
+
+
+.contact-info {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 35px;
+
+}
+
+
+
+.contact-item {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+
+}
+
+
+
+.contact-item > span {
+
+    color: var(--accent);
+
+    font-size: 10px;
+
+    letter-spacing: 3px;
+
+    font-weight: 700;
+
+}
+
+
+
+.contact-item a,
+.contact-item p {
+
+    color: var(--text);
+
+    font-size: 17px;
+
+}
+
+
+
+.contact-item a:hover {
+
+    color: var(--accent);
+
+}
+
+
+
+/* Contact form */
+
+.contact-form {
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 15px;
+
+}
+
+
+
+.contact-form input,
+.contact-form textarea {
+
+    width: 100%;
+
+    padding: 18px;
+
+    border:
+
+        1px solid
+        var(--border);
+
+    border-radius: 10px;
+
+    background: var(--card);
+
+    color: var(--text);
+
+    font-family: inherit;
+
+    font-size: 14px;
+
+    outline: none;
+
+    transition: var(--transition);
+
+}
+
+
+
+.contact-form textarea {
+
+    resize: vertical;
+
+}
+
+
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+
+    border-color: var(--accent);
+
+}
+
+
+
+.contact-form button {
+
+    border: none;
+
+    cursor: pointer;
+
+    align-self: flex-start;
+
+}
+
+
+
+/* =====================================================
+   INNER PAGE MOBILE DESIGN
+===================================================== */
+
+@media (max-width: 900px) {
+
+
+    .inner-page {
+
+        padding:
+            130px 6%
+            70px;
+
+    }
+
+
+
+    .content-section {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .content-card:last-child {
+
+        grid-column: auto;
+
+    }
+
+
+
+    .skills-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+
+    .project-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .certificate-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .notes-grid {
+
+        grid-template-columns:
+            repeat(2, 1fr);
+
+    }
+
+
+
+    .contact-container {
+
+        grid-template-columns: 1fr;
+
+        gap: 50px;
+
+    }
+
+}
+
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+
+    .page-heading {
+
+        margin-bottom: 50px;
+
+    }
+
+
+
+    .page-heading h1 {
+
+        font-size:
+            clamp(
+                50px,
+                14vw,
+                75px
+            );
+
+        letter-spacing: -4px;
+
+    }
+
+
+
+    .skills-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .notes-grid {
+
+        grid-template-columns: 1fr;
+
+    }
+
+
+
+    .timeline::before {
+
+        left: 0;
+
+    }
+
+
+
+    .timeline-item {
+
+        display: block;
+
+        padding-left: 25px;
+
+    }
+
+
+
+    .timeline-year {
+
+        margin-bottom: 15px;
+
+    }
+
+
+
+    .timeline-content {
+
+        padding-left: 0;
+
+    }
+
+
+
+    .timeline-content::before {
+
+        left: -30px;
+
+    }
+
+
+
+    .project-card h2 {
+
+        font-size: 25px;
+
+    }
+
+}
