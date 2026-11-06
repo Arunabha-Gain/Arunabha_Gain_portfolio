@@ -585,34 +585,34 @@ const downloadResume =
     your actual resume URL.
 */
 
-previewResume.addEventListener(
-    "click",
-    function (event) {
+// previewResume.addEventListener(
+//     "click",
+//     function (event) {
 
-        event.preventDefault();
+//         event.preventDefault();
 
-        alert(
-            "Add your resume preview URL here."
-        );
+//         alert(
+//             "Add your resume preview URL here."
+//         );
 
-    }
-);
+//     }
+// );
 
 
 
-/*
-    TEMPORARY DOWNLOAD BUTTON
-*/
+// /*
+//     TEMPORARY DOWNLOAD BUTTON
+// */
 
-downloadResume.addEventListener(
-    "click",
-    function (event) {
+// downloadResume.addEventListener(
+//     "click",
+//     function (event) {
 
-        event.preventDefault();
+//         event.preventDefault();
 
-        alert(
-            "Add your resume download URL here."
-        );
+//         alert(
+//             "Add your resume download URL here."
+//         );
 
-    }
-);
+//     }
+// );
